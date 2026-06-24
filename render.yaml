@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: reddit-crypto-tracker-bot
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ADMIN_CHAT_ID
+        sync: false
+      - key: CHECK_INTERVAL
+        value: 300
+      - key: SUBREDDITS
+        value: Bitcoin,CryptoCurrency,ethfinance
+      - key: LIMIT
+        value: 5
